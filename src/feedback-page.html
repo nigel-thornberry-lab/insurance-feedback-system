@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Feedback - Insurance Broker Portal</title>
+    <link rel="stylesheet" href="styles/feedback-page.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-brand">
+                <div class="brand-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L13.09 8.26L18 7L16.74 12L22 13.09L15.74 14.18L14.18 20.26L12 14L9.82 20.26L8.26 14.18L2 13.09L7.26 12L6 7L10.91 8.26L12 2Z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <h1 class="header-title">Lead Feedback</h1>
+                    <p class="header-subtitle">Professional Lead Quality Assessment</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Lead Information Section -->
+        <section class="lead-info">
+            <div class="lead-card">
+                <div class="lead-header">
+                    <div class="lead-avatar">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" fill="currentColor"/>
+                            <path d="M12 14C7.58172 14 4 17.5817 4 22H20C20 17.5817 16.4183 14 12 14Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="lead-info-content">
+                        <h2 class="lead-name">Sarah Mitchell</h2>
+                        <div class="lead-meta">
+                            <div class="meta-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M16 2V6" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M8 2V6" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M3 10H21" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                                <span>Received: Nov 28, 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lead-score-badge">
+                        <div class="score-circle">
+                            <span class="score-number">87</span>
+                            <span class="score-total">/100</span>
+                        </div>
+                        <span class="score-label">Quality Score</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feedback Form -->
+        <form class="feedback-form" id="feedbackForm">
+            <!-- Star Rating Section -->
+            <section class="rating-section">
+                <div class="section-header">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L15.09 8.26L22 9L17 14.74L18.18 21.02L12 17.77L5.82 21.02L7 14.74L2 9L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                    </svg>
+                    <label class="section-label">Rate Lead Quality</label>
+                </div>
+                <div class="rating-container">
+                    <div class="star-rating" id="starRating">
+                        <button type="button" class="star" data-rating="1" aria-label="1 star - Poor quality">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9L17 14.74L18.18 21.02L12 17.77L5.82 21.02L7 14.74L2 9L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="1.5" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <button type="button" class="star" data-rating="2" aria-label="2 stars - Below average">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9L17 14.74L18.18 21.02L12 17.77L5.82 21.02L7 14.74L2 9L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="1.5" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <button type="button" class="star" data-rating="3" aria-label="3 stars - Average quality">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9L17 14.74L18.18 21.02L12 17.77L5.82 21.02L7 14.74L2 9L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="1.5" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <button type="button" class="star" data-rating="4" aria-label="4 stars - Good quality">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9L17 14.74L18.18 21.02L12 17.77L5.82 21.02L7 14.74L2 9L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="1.5" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <button type="button" class="star" data-rating="5" aria-label="5 stars - Excellent quality">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9L17 14.74L18.18 21.02L12 17.77L5.82 21.02L7 14.74L2 9L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="1.5" fill="currentColor"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="rating-labels">
+                        <span class="rating-label">Poor</span>
+                        <span class="rating-label">Fair</span>
+                        <span class="rating-label">Good</span>
+                        <span class="rating-label">Great</span>
+                        <span class="rating-label">Excellent</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lead Status Section -->
+            <section class="status-section">
+                <div class="section-header">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <label for="leadStatus" class="section-label">Update Lead Status</label>
+                </div>
+                <div class="select-wrapper">
+                    <select id="leadStatus" name="leadStatus" class="status-dropdown" required>
+                        <option value="">Select current status...</option>
+                        <option value="new">🆕 New - Not contacted yet</option>
+                        <option value="contacted">📞 Contacted - Initial contact made</option>
+                        <option value="booked">📅 Booked - Appointment scheduled</option>
+                        <option value="first-meeting">🤝 1st Meeting - Consultation completed</option>
+                        <option value="second-meeting">💼 2nd Meeting - Follow-up completed</option>
+                        <option value="submitted">📄 Submitted - Application submitted</option>
+                        <option value="issued">✅ Issued - Policy issued</option>
+                        <option value="failed">❌ Failed - Not viable</option>
+                    </select>
+                    <svg class="select-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </section>
+
+            <!-- Quick Issue Buttons -->
+            <section class="issues-section">
+                <div class="section-header">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 8V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <label class="section-label">Common Issues</label>
+                    <span class="optional-label">(Optional)</span>
+                </div>
+                <div class="issue-buttons">
+                    <button type="button" class="issue-btn" data-issue="wrong-contact">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 16.92V19.92C22 20.52 21.52 21 20.92 21C9.4 21 0 11.6 0 0.08C0 -0.52 0.48 -1 1.08 -1H4.08C4.68 -1 5.16 -0.52 5.16 0.08V3.08" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Wrong Contact Info
+                    </button>
+                    <button type="button" class="issue-btn" data-issue="not-interested">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Not Interested
+                    </button>
+                    <button type="button" class="issue-btn" data-issue="has-coverage">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Already Has Coverage
+                    </button>
+                    <button type="button" class="issue-btn" data-issue="budget-mismatch">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 1V23M17 5H9.5C8.57 5 7.75 5.5 7.75 6.5S8.57 8 9.5 8H14.5C15.43 8 16.25 8.5 16.25 9.5S15.43 11 14.5 11H7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Budget Doesn't Match
+                    </button>
+                    <button type="button" class="issue-btn" data-issue="outside-area">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 10C21 17 12 23 12 23S3 17 3 10C3 5.03 7.03 1 12 1S21 5.03 21 10Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 13C13.66 13 15 11.66 15 10C15 8.34 13.66 7 12 7C10.34 7 9 8.34 9 10C9 11.66 10.34 13 12 13Z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Outside Service Area
+                    </button>
+                    <button type="button" class="issue-btn" data-issue="fake-lead">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 9V13M12 17H12.01M21 12C21 16.97 16.97 21 12 21S3 16.97 3 12S7.03 3 12 3S21 7.03 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Fraudulent Lead
+                    </button>
+                </div>
+            </section>
+
+            <!-- Optional Comment Section -->
+            <section class="comment-section">
+                <div class="section-header">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 11.5C21.0034 12.8199 20.6951 14.1219 20.1 15.3C19.3944 16.7118 18.3098 17.8992 16.9674 18.7293C15.6251 19.5594 14.0782 19.9994 12.5 20C11.1801 20.0035 9.87812 19.6951 8.7 19.1L3 21L4.9 15.3C4.30493 14.1219 3.99656 12.8199 4 11.5C4.00061 9.92179 4.44061 8.37488 5.27072 7.03258C6.10083 5.69028 7.28825 4.6056 8.7 3.90003C9.87812 3.30496 11.1801 2.99659 12.5 3.00003H13C15.0843 3.11502 17.053 3.99479 18.5291 5.47089C20.0052 6.94699 20.885 8.91568 21 11V11.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <label for="comments" class="section-label">Additional Feedback</label>
+                    <span class="optional-label">(Optional)</span>
+                </div>
+                <div class="textarea-wrapper">
+                    <textarea 
+                        id="comments" 
+                        name="comments" 
+                        class="comment-textarea" 
+                        placeholder="Share any additional insights to help us improve lead quality..."
+                        maxlength="200"
+                        rows="3"
+                    ></textarea>
+                    <div class="character-count">
+                        <span id="charCount">0</span>/200 characters
+                    </div>
+                </div>
+            </section>
+
+            <!-- Submit Section -->
+            <section class="submit-section">
+                <button type="submit" class="submit-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Submit Feedback
+                </button>
+                <div class="submit-footer">
+                    <div class="privacy-note">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 8V12M12 16H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Your feedback helps improve lead quality for all brokers
+                    </div>
+                    <div class="security-badge">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22S2 17 2 9L12 5L22 9C22 17 12 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Secure & Confidential
+                    </div>
+                </div>
+            </section>
+        </form>
+
+        <!-- Hidden Fields -->
+        <input type="hidden" name="leadId" value="lead-12345">
+        <input type="hidden" name="brokerName" value="John Smith">
+        <input type="hidden" name="rating" id="selectedRating" value="">
+        <input type="hidden" name="issues" id="selectedIssues" value="">
+    </div>
+
+    <script src="scripts/api-client.js"></script>
+    <script src="scripts/feedback-page.js"></script>
+</body>
+</html>

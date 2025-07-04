@@ -1,0 +1,37 @@
+services:
+  - type: web
+    name: insurance-feedback-system
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: DATABASE_URL
+        fromDatabase:
+          name: feedback-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: COMPANY_NAME
+        value: Insurance Lead Generation
+      - key: FROM_EMAIL
+        value: leads@yourcompany.com
+      - key: LOG_LEVEL
+        value: info
+      - key: CORS_ORIGINS
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
+
+  - type: pserv
+    name: feedback-db
+    plan: free
+    databaseName: feedback_db
+    user: feedback_user

@@ -1,0 +1,732 @@
+/* Professional Business-Grade Insurance Feedback Interface */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.6;
+    color: #1E293B;
+    background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+}
+
+/* Container */
+.container {
+    max-width: 375px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: #FFFFFF;
+    box-shadow: 
+        0 0 0 1px rgba(15, 23, 42, 0.05),
+        0 10px 25px -5px rgba(15, 23, 42, 0.1),
+        0 25px 50px -12px rgba(15, 23, 42, 0.25);
+    position: relative;
+}
+
+/* Header Styling - Professional Blue Gradient */
+.header {
+    background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 50%, #60A5FA 100%);
+    color: white;
+    padding: 28px 24px 32px;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    pointer-events: none;
+}
+
+.header-brand {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    position: relative;
+    z-index: 1;
+}
+
+.brand-icon {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.brand-icon svg {
+    color: white;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+.brand-text {
+    flex: 1;
+}
+
+.header-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    letter-spacing: -0.025em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.header-subtitle {
+    font-size: 14px;
+    opacity: 0.9;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+/* Lead Information Card */
+.lead-info {
+    padding: 24px;
+    background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%);
+    border-bottom: 1px solid #E2E8F0;
+    position: relative;
+}
+
+.lead-card {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #E2E8F0;
+    box-shadow: 
+        0 1px 3px rgba(15, 23, 42, 0.08),
+        0 4px 6px rgba(15, 23, 42, 0.04);
+    padding: 20px;
+    transition: all 0.2s ease;
+}
+
+.lead-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.lead-avatar {
+    background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.25);
+}
+
+.lead-info-content {
+    flex: 1;
+}
+
+.lead-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0F172A;
+    margin-bottom: 8px;
+    letter-spacing: -0.025em;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #64748B;
+    font-weight: 500;
+}
+
+.meta-item svg {
+    color: #94A3B8;
+}
+
+.lead-score-badge {
+    text-align: center;
+    min-width: 80px;
+}
+
+.score-circle {
+    background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+    color: white;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+    border: 3px solid white;
+}
+
+.score-number {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.score-total {
+    font-size: 11px;
+    font-weight: 500;
+    opacity: 0.8;
+    line-height: 1;
+}
+
+.score-label {
+    font-size: 11px;
+    color: #64748B;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Form Styles */
+.feedback-form {
+    padding: 24px;
+}
+
+/* Section Styling */
+.rating-section,
+.status-section,
+.issues-section,
+.comment-section,
+.submit-section {
+    margin-bottom: 32px;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.section-header svg {
+    color: #3B82F6;
+}
+
+.section-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0F172A;
+    letter-spacing: -0.025em;
+}
+
+.optional-label {
+    font-size: 13px;
+    color: #64748B;
+    font-weight: 500;
+    font-style: italic;
+}
+
+/* Enhanced Star Rating */
+.rating-container {
+    background: #FAFAFA;
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.star-rating {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.star {
+    background: white;
+    border: 2px solid #E5E7EB;
+    border-radius: 12px;
+    min-width: 52px;
+    min-height: 52px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.star::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+    transition: left 0.5s;
+}
+
+.star:hover::before {
+    left: 100%;
+}
+
+.star svg {
+    color: #D1D5DB;
+    transition: all 0.3s ease;
+}
+
+.star:hover,
+.star:focus {
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+    transform: translateY(-2px);
+}
+
+.star:focus {
+    outline: none;
+}
+
+.star.active svg {
+    color: #F59E0B;
+    filter: drop-shadow(0 2px 4px rgba(245, 158, 11, 0.3));
+}
+
+.star.active:nth-child(5) svg { color: #22C55E; }
+.star.active:nth-child(4) svg { color: #84CC16; }
+.star.active:nth-child(1) svg,
+.star.active:nth-child(2) svg { color: #EF4444; }
+
+.star.active {
+    border-color: currentColor;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%);
+    transform: scale(1.1);
+}
+
+.rating-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #64748B;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Professional Select Dropdown */
+.select-wrapper {
+    position: relative;
+}
+
+.status-dropdown {
+    width: 100%;
+    min-height: 52px;
+    padding: 14px 48px 14px 16px;
+    font-size: 15px;
+    font-weight: 500;
+    border: 2px solid #E5E7EB;
+    border-radius: 12px;
+    background: white;
+    color: #1E293B;
+    transition: all 0.3s ease;
+    appearance: none;
+    cursor: pointer;
+}
+
+.status-dropdown:focus {
+    outline: none;
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+.status-dropdown:hover {
+    border-color: #94A3B8;
+}
+
+.select-arrow {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748B;
+    pointer-events: none;
+    transition: transform 0.2s ease;
+}
+
+.status-dropdown:focus + .select-arrow {
+    transform: translateY(-50%) rotate(180deg);
+    color: #3B82F6;
+}
+
+/* Enhanced Issue Buttons */
+.issue-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.issue-btn {
+    min-height: 52px;
+    padding: 12px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+    background: white;
+    border: 2px solid #E5E7EB;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-start;
+    text-align: left;
+    line-height: 1.3;
+    position: relative;
+    overflow: hidden;
+}
+
+.issue-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.issue-btn:hover::before {
+    left: 100%;
+}
+
+.issue-btn svg {
+    color: #94A3B8;
+    transition: color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.issue-btn:hover,
+.issue-btn:focus {
+    border-color: #3B82F6;
+    color: #1E40AF;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.issue-btn:focus {
+    outline: none;
+}
+
+.issue-btn.selected {
+    background: linear-gradient(135deg, #EBF8FF 0%, #DBEAFE 100%);
+    border-color: #3B82F6;
+    color: #1E40AF;
+    transform: scale(1.02);
+}
+
+.issue-btn.selected svg {
+    color: #3B82F6;
+}
+
+/* Enhanced Comment Section */
+.textarea-wrapper {
+    position: relative;
+}
+
+.comment-textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 16px;
+    font-size: 15px;
+    font-family: inherit;
+    font-weight: 400;
+    line-height: 1.6;
+    border: 2px solid #E5E7EB;
+    border-radius: 12px;
+    background: white;
+    color: #1E293B;
+    resize: vertical;
+    transition: all 0.3s ease;
+}
+
+.comment-textarea:focus {
+    outline: none;
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+.comment-textarea:hover {
+    border-color: #94A3B8;
+}
+
+.comment-textarea::placeholder {
+    color: #94A3B8;
+    font-weight: 400;
+}
+
+.character-count {
+    text-align: right;
+    font-size: 12px;
+    color: #64748B;
+    font-weight: 500;
+    margin-top: 8px;
+    transition: color 0.3s ease;
+}
+
+/* Premium Submit Button */
+.submit-btn {
+    width: 100%;
+    min-height: 56px;
+    padding: 16px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 50%, #2563EB 100%);
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(30, 64, 175, 0.3);
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.submit-btn:hover::before {
+    left: 100%;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(30, 64, 175, 0.4);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.submit-btn:disabled {
+    background: linear-gradient(135deg, #9CA3AF 0%, #6B7280 100%);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.submit-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.submit-btn:hover svg {
+    transform: translateX(2px);
+}
+
+/* Professional Footer */
+.submit-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.privacy-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #64748B;
+    text-align: center;
+    justify-content: center;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.privacy-note svg {
+    color: #94A3B8;
+    flex-shrink: 0;
+}
+
+.security-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 11px;
+    color: #22C55E;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.security-badge svg {
+    color: #22C55E;
+}
+
+/* Loading States */
+.loading {
+    position: relative;
+    color: transparent !important;
+}
+
+.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid transparent;
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Success and Error States */
+.success {
+    background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%) !important;
+}
+
+.error {
+    background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%) !important;
+}
+
+/* Error Message Styling */
+.error-message {
+    background: linear-gradient(135deg, #FEF2F2 0%, #FEE2E2 100%);
+    color: #DC2626;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #FECACA;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 320px) {
+    .container {
+        max-width: 320px;
+    }
+    
+    .header {
+        padding: 24px 20px 28px;
+    }
+    
+    .feedback-form {
+        padding: 20px;
+    }
+    
+    .lead-info {
+        padding: 20px;
+    }
+    
+    .star {
+        min-width: 48px;
+        min-height: 48px;
+    }
+    
+    .star svg {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .issue-buttons {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .lead-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 16px;
+    }
+    
+    .lead-score-badge {
+        min-width: auto;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .star,
+    .issue-btn,
+    .status-dropdown,
+    .comment-textarea {
+        border-width: 3px;
+    }
+    
+    .submit-btn {
+        border: 3px solid #1E40AF;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    .star::before,
+    .issue-btn::before,
+    .submit-btn::before {
+        display: none;
+    }
+}
+
+/* Enhanced Focus Styles for Accessibility */
+.star:focus-visible,
+.issue-btn:focus-visible,
+.status-dropdown:focus-visible,
+.comment-textarea:focus-visible,
+.submit-btn:focus-visible {
+    outline: 3px solid #3B82F6;
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+    .container {
+        box-shadow: none;
+        max-width: 100%;
+    }
+    
+    .header {
+        background: #3B82F6 !important;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+    }
+    
+    .submit-btn {
+        background: #3B82F6 !important;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
+    }
+}
