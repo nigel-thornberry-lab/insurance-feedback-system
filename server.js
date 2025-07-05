@@ -144,12 +144,37 @@ app.use((error, req, res, next) => {
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
+// Run database migrations on startup (for free hosting)
+async function initializeDatabase() {
+    if (process.env.NODE_ENV === 'production') {
+        try {
+            console.log('🔄 Running database migrations...');
+            const knex = require('./database/db');
+            await knex.migrate.latest();
+            console.log('✅ Database migrations complete');
+            
+            // Check if we need to seed data
+            const leadCount = await knex('leads').count('id as count').first();
+            if (parseInt(leadCount.count) === 0) {
+                console.log('🌱 Seeding database with sample data...');
+                await knex.seed.run();
+                console.log('✅ Database seeding complete');
+            }
+        } catch (error) {
+            console.error('❌ Database initialization failed:', error);
+        }
+    }
+}
+
+app.listen(PORT, async () => {
     console.log(`🚀 Insurance Feedback System running on port ${PORT}`);
     console.log(`📊 Environment: ${process.env.NODE_ENV || 'development'}`);
     console.log(`🌐 Access the application at: http://localhost:${PORT}`);
     console.log(`📈 Dashboard available at: http://localhost:${PORT}/dashboard`);
     console.log(`🔍 API documentation at: http://localhost:${PORT}/api`);
+    
+    // Initialize database for production
+    await initializeDatabase();
     
     if (process.env.NODE_ENV === 'development') {
         console.log('\n🛠️  Development mode active');
